@@ -1,0 +1,26 @@
+﻿<html>
+    <body style="font-family: verdana">
+        <h2> Approval required for timesheet submitted by {{user.firstName}}</h2>
+        <table border="1">
+            <thead>
+                <th>Day of Week</th>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Hours</th>
+            </thead>
+            <tbody>
+                {{#each data.entries}}
+                    <tr>
+                        <td>{{this.dayOfWeek}}</td>
+                        <td>{{this.month}} - {{this.dayOfMonth}}</td>
+                        <td>{{this.category}}</td>
+                        <td>{{this.hrs}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <br/><br/><br/>
+        <a href="{{approveLink}}"> Approve</a> &nbsp;&nbsp; <a href="{{rejectLink}}"> Reject</a>
+
+    </body>
+</html>
